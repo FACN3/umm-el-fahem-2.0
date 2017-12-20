@@ -1,0 +1,11 @@
+<ul class="topnav">
+  {{#unless logginIn}}
+  <a href="/login">login</a>
+  {{else}}
+  <a href="/logout">{{name}}</a>
+  {{/unless}}
+  <!-- <form action="/login">
+  <input id='login' type="submit" class="right"  value="Login" />
+</form>-->
+  <button type="button" id="article_button" class="button--article" name="button">Add new article</button>
+</ul>
