@@ -1,8 +1,9 @@
 const pl = require("../db_connection");
 const bcrypt = require("bcryptjs");
-const create_cookie = require("../../src/authentication/cookies");
+const create_cookie = require("../../src/authentication/cookie");
 
 const user_validation = (username, password, cb) => {
+  // console.log("username =>",username," password =>",password);
   pl.query(
     "SELECT * FROM users WHERE user_name = $1", [username],
     (err, res) => {
@@ -17,6 +18,7 @@ const user_validation = (username, password, cb) => {
               console.log(err);
             } else {
               if (result) {
+                console.log("database result =>",res);
                 //console.log('create cookie', create_cookie(res.rows[0]));
                 cb(null, create_cookie(res.rows[0]));
               } else {
