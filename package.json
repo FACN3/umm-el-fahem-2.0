@@ -25,6 +25,7 @@
     "env2": "^2.2.0",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
+    "jsonwebtoken": "^8.1.0",
     "nodemon": "^1.13.3",
     "pg": "^7.4.0"
   }
