@@ -1,7 +1,7 @@
 
 const render = {
   getHome : (req,res)=>{
-    res.render('home');
+    res.render('home', {loggedIn: true,name:""});
   },
   getLogin : (req, res) => {
     res.render('login');
