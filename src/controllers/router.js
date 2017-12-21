@@ -4,9 +4,11 @@ const path = require("path");
 const rend = require('./render');
 const loginQuery = require('../../database/queries/loginQuery');
 const hashPassAndAdd = require('../authentication/hashPass');
+const verifyCookie = require('../authentication/verify');
+
 router.use("/static", express.static(path.join(__dirname, "..", "..", "/public")));
 
-router.get("/", rend.getHome);
+router.get("/",verifyCookie, rend.getHome);
 router.get("/login", rend.getLogin);
 router.get("/signup", rend.getSignUp);
 router.post("/login", (req, res) => {
