@@ -1,9 +1,10 @@
 <ul class="topnav">
-  {{#unless logginIn}}
-  <a href="/login">login</a>
-  {{else}}
+  {{#if loggedIn}}
   <a href="/logout">{{name}}</a>
-  {{/unless}}
+
+  {{else}}
+        <a href="/login">login</a>
+  {{/if}}
   <!-- <form action="/login">
   <input id='login' type="submit" class="right"  value="Login" />
 </form>-->
